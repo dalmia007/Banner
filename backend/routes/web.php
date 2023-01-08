@@ -21,5 +21,9 @@ Route::get('/banner-create',[BannerController::class,'create']);
 
 Route::post('/banner-store',[BannerController::class,'store']);
 
+Route::get('/banner-edit/{id}',[BannerController::class,'edit']);
+
+Route::put('/banner-update/{id}',[BannerController::class,'update']);
+
 
 

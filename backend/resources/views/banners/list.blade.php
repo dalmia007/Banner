@@ -26,8 +26,8 @@
       <tr>
         <td>{{$loop->index+1}}</td>
         <td>{{$banner->title}}</td>
-        <td>
-        <button type="submit" class="btn btn-sm btn-info">Edit</button>
+        <td class="d-flex flex-row">
+        <a href="/banner-edit/{{$banner->id}}" class="btn btn-sm btn-info">Edit</a>
         <button type="submit" class="btn btn-sm btn-danger ml-2">Delete</button>
         </td>
       </tr>

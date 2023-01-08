@@ -26,4 +26,19 @@ class BannerController extends Controller
         $banner->save();
         return redirect('/');
     }
+
+    public function edit($id){
+        $banner = Banner::where('id',$id)->first();
+        return view('banners.edit',['banner'=> $banner]);
+    }
+
+    public function update(Request $request,$id){
+        $banner = Banner::where('id',$id)->first();
+        $banner->title = $request->title;
+        $banner->url = $request->url;
+        $banner->image_mobile = $request->image_mobile;
+        $banner->image_desktop = $request->image_desktop;
+        $banner->save();
+        return redirect('/');
+    }
 }
