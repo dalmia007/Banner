@@ -12,7 +12,7 @@
 <body>
 
 <div class="container mt-5">
-  <h2>Banners</h2>
+  <h2>Banners<a href="/banner-create" class="btn btn-info ml-2">New Banner</a></h2>
   <table class="table table-hover">
     <thead>
       <tr>
