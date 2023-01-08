@@ -32,7 +32,7 @@ class BannerController extends Controller
         $banner->image_mobile = $request->image_mobile;
         $banner->image_desktop = $request->image_desktop;
         $banner->save();
-        return redirect('/');
+        return redirect('/')->withSuccess('New Banner Created');;
     }
 
     public function edit($id){
@@ -55,12 +55,12 @@ class BannerController extends Controller
         $banner->image_mobile = $request->image_mobile;
         $banner->image_desktop = $request->image_desktop;
         $banner->save();
-        return redirect('/');
+        return redirect('/')->withSuccess('Banner Updated');
     }
 
     public function delete($id){
         $banner = Banner::where('id',$id)->first();
         $banner->delete();
-        return redirect('/');
+        return redirect('/')->withSuccess('Banner Deleted');
     }
 }

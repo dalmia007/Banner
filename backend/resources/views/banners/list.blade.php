@@ -13,6 +13,11 @@
 
 <div class="container mt-5">
   <h2>Banners<a href="/banner-create" class="btn btn-info ml-2">New Banner</a></h2>
+  @if(session()->has('success'))
+  <div class="alert alert-info" role="alert">
+    <strong>{{session()->get('success')}}</strong>
+  </div>
+  @endif
   <table class="table table-hover">
     <thead>
       <tr>
