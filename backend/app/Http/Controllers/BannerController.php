@@ -9,6 +9,11 @@ class BannerController extends Controller
 {
     public function index(){
         $banners =  Banner::get();
+        return response()->json($banners);
+    }
+
+    public function show(){
+        $banners =  Banner::get();
         return view('banners.list',['banners'=>$banners]);
     }
 

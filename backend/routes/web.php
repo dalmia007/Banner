@@ -15,7 +15,7 @@ use App\Http\Controllers\BannerController;
 |
 */
 
-Route::get('/',[BannerController::class,'index']);
+Route::get('/',[BannerController::class,'show']);
 
 Route::get('/banner-create',[BannerController::class,'create']);
 
