@@ -20,12 +20,24 @@
         @method('put')
         <label>Title</label>
         <input type="text" name="title" class="form-control" value="{{$banner->title}}"/>
+        @if($errors->has('title'))
+        <p class="text-danger">{{$errors->first('title')}}</p>
+        @endif
         <label>URL</label>
         <input type="text" name="url" class="form-control" value="{{$banner->url}}"/>
+        @if($errors->has('url'))
+        <p class="text-danger">{{$errors->first('url')}}</p>
+        @endif
         <label>Mobile Image URL</label>
         <input type="text" name="image_mobile" class="form-control" value="{{$banner->image_mobile}}"/>
+        @if($errors->has('image_mobile'))
+        <p class="text-danger">{{$errors->first('image_mobile')}}</p>
+        @endif
         <label>Desktop Image URL</label>
         <input type="text" name="image_desktop" class="form-control" value="{{$banner->image_desktop}}"/>
+        @if($errors->has('image_desktop'))
+        <p class="text-danger">{{$errors->first('image_desktop')}}</p>
+        @endif
         <button class="btn btn-info mt-2" type="submit">Update</button>
         </form>
     </div>

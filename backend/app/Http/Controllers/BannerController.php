@@ -18,6 +18,14 @@ class BannerController extends Controller
 
     public function store(Request $request){
 
+        //Data Validation
+        $request->validate([
+            'title'=>'required|unique:banners',
+            'url'=>'required|url',
+            'image_mobile'=>'required|url',
+            'image_desktop'=>'required|url',
+        ]);
+
         $banner = new Banner;
         $banner->title = $request->title;
         $banner->url = $request->url;
@@ -34,6 +42,14 @@ class BannerController extends Controller
 
     public function update(Request $request,$id){
         $banner = Banner::where('id',$id)->first();
+         //Data Validation
+         $request->validate([
+            'title'=>'required',
+            'url'=>'required|url',
+            'image_mobile'=>'required|url',
+            'image_desktop'=>'required|url',
+        ]);
+
         $banner->title = $request->title;
         $banner->url = $request->url;
         $banner->image_mobile = $request->image_mobile;
