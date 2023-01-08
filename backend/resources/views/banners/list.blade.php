@@ -28,7 +28,11 @@
         <td>{{$banner->title}}</td>
         <td class="d-flex flex-row">
         <a href="/banner-edit/{{$banner->id}}" class="btn btn-sm btn-info">Edit</a>
-        <button type="submit" class="btn btn-sm btn-danger ml-2">Delete</button>
+        <form method="post" action="/banner-delete/{{$banner->id}}">
+                @csrf
+                @method('delete')
+            <button type="submit" class="btn btn-sm btn-danger ml-2">Delete</button>
+            </form>
         </td>
       </tr>
       @endforeach

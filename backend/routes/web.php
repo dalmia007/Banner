@@ -25,5 +25,6 @@ Route::get('/banner-edit/{id}',[BannerController::class,'edit']);
 
 Route::put('/banner-update/{id}',[BannerController::class,'update']);
 
+Route::delete('/banner-delete/{id}',[BannerController::class,'delete']);
 
 

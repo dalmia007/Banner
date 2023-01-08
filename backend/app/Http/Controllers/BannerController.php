@@ -41,4 +41,10 @@ class BannerController extends Controller
         $banner->save();
         return redirect('/');
     }
+
+    public function delete($id){
+        $banner = Banner::where('id',$id)->first();
+        $banner->delete();
+        return redirect('/');
+    }
 }
